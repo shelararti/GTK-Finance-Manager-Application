@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  
+  <object class="GtkWindow" id="main_window">
+    <property name="title">Budget Manager</property>
+    <property name="default_width">400</property>
+    <property name="default_height">300</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <property name="margin">10</property>
+        
+        <!-- Transaction Button -->
+        <child>
+          <object class="GtkButton" id="transaction_button">
+            <property name="label">Transaction</property>
+            <signal name="clicked" handler="on_transaction_button_clicked"/>
+          </object>
+        </child>
+        
+        <!-- Transaction Options Box -->
+        <child>
+          <object class="GtkBox" id="transaction_box">
+            <property name="orientation">vertical</property>
+            <property name="spacing">5</property>
+            <property name="visible">false</property>
+            
+            <!-- Combobox for Income/Expense -->
+            <child>
+              <object class="GtkComboBoxText" id="income_expense_combobox">
+                <items>
+                  <item id="income">Income</item>
+                  <item id="expense">Expense</item>
+                </items>
+              </object>
+            </child>
+            
+            <!-- Combobox for Description -->
+            <child>
+              <object class="GtkComboBoxText" id="description_combobox">
+                <items>
+                  <item id="salary">Salary</item>
+                  <item id="rent">Rent</item>
+                  <item id="groceries">Groceries</item>
+                  <item id="others">Others</item>
+                </items>
+              </object>
+            </child>
+            
+            <!-- Entry for Amount -->
+            <child>
+              <object class="GtkEntry" id="amount_entry">
+                <property name="placeholder_text">Enter amount</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        
+        <!-- Set Budget Button -->
+        <child>
+          <object class="GtkButton" id="set_budget_button">
+            <property name="label">Set Budget</property>
+            <signal name="clicked" handler="on_set_budget_button_clicked"/>
+          </object>
+        </child>
+        
+        <!-- Set Budget Entry -->
+        <child>
+          <object class="GtkEntry" id="budget_entry">
+            <property name="placeholder_text">Set budget amount</property>
+            <property name="visible">false</property>
+          </object>
+        </child>
+        
+        <!-- View Report Button -->
+        <child>
+          <object class="GtkButton" id="view_report_button">
+            <property name="label">View Report</property>
+            <signal name="clicked" handler="on_view_report_button_clicked"/>
+          </object>
+        </child>
+        
+        <!-- Report Display in Table Format -->
+        <child>
+          <object class="GtkScrolledWindow" id="report_scrolled_window">
+            <property name="visible">false</property> <!-- Initially hidden -->
+            <property name="min_content_width">300</property>
+            <property name="min_content_height">200</property>
+            <child>
+              <object class="GtkTreeView" id="report_treeview">
+                <!-- Define columns for the table view -->
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="title">Date</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="title">Type</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="title">Description</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">2</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn">
+                    <property name="title">Amount</property>
+                    <child>
+                      <object class="GtkCellRendererText"/>
+                      <attributes>
+                        <attribute name="text">3</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        
+      </object>
+    </child>
+  </object>
+</interface>
