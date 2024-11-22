@@ -9,7 +9,7 @@ View a detailed report of all transactions.
 
 Receive a warning if expenses exceed the set budget.
 
-
+<Br>
 Features
 
 1. Set Budget: Set an initial budget and track remaining funds.
@@ -24,14 +24,14 @@ Features
 4. Budget Warning: Displays a warning dialog if expenses exceed the budget.
 
 
-
+<Br>
 Requirements
 
 GTK 3.0+
 
 Glade
 
-
+<Br>
 Installation
 
 1. Clone the repository:
@@ -55,7 +55,7 @@ gcc -o finance_manager finance_manager.c pkg-config --cflags --libs gtk+-3.0
 ./finance_manager
 
 
-
+<Br>
 Usage
 
 1. Set Budget: Enter the budget in the input field and click "Set Budget."
@@ -67,14 +67,14 @@ Usage
 3. View Report: Click "View Report" to see a detailed report of transactions.
 
 
-
+<Br>
 Files
 
 finance_manager.c: The main C file containing the logic for the application.
 
 finance_manager.glade: The Glade XML file for the application's GUI design.
 
-
+<Br>
 Contributing
 
 Contributions are welcome! Feel free to fork the repository, make changes, and submit a pull request.
